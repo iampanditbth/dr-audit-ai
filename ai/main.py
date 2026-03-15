@@ -10,6 +10,10 @@ load_dotenv()
 
 app = FastAPI(title="Dr. Audit AI Service")
 
+@app.get("/")
+def read_root():
+    return {"status": "ok", "message": "Dr. Audit AI Service is running"}
+
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
